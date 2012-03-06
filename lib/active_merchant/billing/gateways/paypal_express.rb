@@ -88,7 +88,9 @@ module ActiveMerchant #:nodoc:
                 xml.tag! 'n2:OrderDescription', options[:description]
 
                 add_items_xml(xml, options, currency_code) if options[:items]
+                xml.tag! 'n2:Custom', options[:custom] unless options[:custom].blank?
               end
+            
             end
           end
         end
